@@ -1,0 +1,32 @@
+class Solution 
+{
+    public boolean isPalindrome(int x) 
+    {
+        //Initialization of the if statement
+        if (x == 0)
+        return true;
+
+        if (x < 0 || x % 10 == 0)
+        return false;
+
+        List<Integer>arr = new ArrayList();
+        
+        while (x > 0 ) 
+        {
+            int Temp = x % 10 ;
+            x = x / 10 ;
+            arr.add(Temp);
+        }
+        int start = 0;
+        int end = arr.size() - 1 ;
+
+        while (start <= end) 
+        {
+            if (arr.get(start) != arr.get(end))
+            return false;
+            start ++ ;
+            end -- ;            
+        }
+        return true;
+    }    
+}
